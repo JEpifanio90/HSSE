@@ -1,0 +1,25 @@
+<form [formGroup]="loginForm" class="p-grid p-nogutter hsse-login_spacer--tb">
+  <mat-form-field appearance="outline" class="p-col-12" color="accent">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput formControlName="email">
+    <mat-icon matSuffix class="fa fa-envelope"></mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="p-col-12" color="accent">
+    <mat-label>Passowrd</mat-label>
+    <input type="password" matInput formControlName="password">
+    <mat-icon matSuffix class="fa fa-lock"></mat-icon>
+  </mat-form-field>
+  <div class="p-col-12 hsse_element--center">
+    <div class="p-grid p-nogutter">
+      <div class="p-col-6">
+        <mat-checkbox>Remember Me?</mat-checkbox>
+      </div>
+      <div class="p-col-6">
+        <a mat-button color="primary" routerLink=".">Forgot Password?</a>
+      </div>
+      <div class="p-col-12 hsse-login_spacer--top">
+        <button mat-raised-button class="hsse_element--full" color="accent" (click)="sendCredentials()" [disabled]="!loginForm.valid">Log in!</button>
+      </div>
+    </div>
+  </div>
+</form>

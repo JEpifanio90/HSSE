@@ -1,0 +1,35 @@
+<div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="5%">
+  <div fxFlex>
+    <hsse-questions [form]="dateRangeForm" [questions]="metricsQuestions" layout='row' gap="3%"></hsse-questions>
+    <button id="filterBtn" mat-stroked-button color="accent" (click)="filterMetrics($event)">Filter Graphs</button>
+  </div>
+  <div fxFlex>
+    <mat-card>
+      <mat-card-header>
+        <mat-button-toggle-group #group="matButtonToggleGroup" (change)="updateGraph($event)">
+          <mat-button-toggle value="polarArea">
+            <mat-icon class="fas fa-chart-area"></mat-icon>
+          </mat-button-toggle>
+          <mat-button-toggle value="pie">
+            <mat-icon class="fas fa-chart-pie"></mat-icon>
+          </mat-button-toggle>
+          <mat-button-toggle value="line">
+            <mat-icon class="fas fa-chart-line"></mat-icon>
+          </mat-button-toggle>
+          <mat-button-toggle value="bar">
+            <mat-icon class="fas fa-chart-bar"></mat-icon>
+          </mat-button-toggle>
+          <mat-button-toggle value="radar">
+            <mat-icon class="fas fa-bullseye"></mat-icon>
+          </mat-button-toggle>
+          <mat-button-toggle value="doughnut">
+            <mat-icon class="fas fa-dot-circle"></mat-icon>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </mat-card-header>
+      <mat-card-content>
+        <p-chart #chart type="polarArea" [data]="graphData"></p-chart>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

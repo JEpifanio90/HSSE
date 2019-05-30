@@ -1,0 +1,30 @@
+@import '../../../assets/scss/mixins';
+
+
+#aboutSection {
+  @include parallax('/assets/images/background.jpg', 100%);
+}
+
+#demoSection {
+  @include parallax('/assets/images/footer.png', 100%);
+  padding: 5% 0;
+}
+
+#featuresSection {
+  @include parallax(null, 100%);
+  padding: 0 5% 2% 5%;
+}
+
+.hsse-lndg {
+  &_card {
+    &--center {
+      padding: 10%;
+    }
+  }
+}
+
+:host {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}

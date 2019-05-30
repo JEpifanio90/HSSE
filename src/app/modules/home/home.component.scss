@@ -1,0 +1,47 @@
+@import '../../../assets/scss/colors';
+
+mat-sidenav-content {
+  height: 100vh;
+}
+
+.hsse {
+  &_icon {
+    margin-right: 5%;
+  }
+
+  &_listItem {
+    margin: 2% 0;
+    color: $grey;
+  }
+
+  &_header {
+    & > img {
+      height: 50px;
+      width: 40px;
+    }
+
+    & > h3 {
+      margin: 4% 0 0 2%;
+    }
+  }
+
+  &_activeLink {
+    background-color: $red;
+    color: $chalk;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 13px 10px -5px rgba(244, 67, 54, .4);
+    height: 65px;
+
+    &:hover,
+    &:focus {
+      background-color: $red !important;
+      color: $chalk;
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 13px 10px -5px rgba(244, 67, 54, .4);
+    }
+  }
+}
+
+
+:host {
+  width: 100%;
+  height: 100%;
+}

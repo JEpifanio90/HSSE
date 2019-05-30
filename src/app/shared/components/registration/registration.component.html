@@ -1,0 +1,40 @@
+<form [formGroup]="newUserForm" class="p-grid p-nogutter hsse-rg_spacer--tb">
+  <mat-form-field appearance="outline" class="p-col-12" color="accent">
+    <mat-label>Full Name</mat-label>
+    <input type="text" matInput formControlName="name">
+    <mat-icon matSuffix class="fa fa-user"></mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="p-col-12" color="accent">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput formControlName="email">
+    <mat-icon matSuffix class="fa fa-envelope"></mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="p-col-12" color="accent">
+    <mat-label>Passowrd</mat-label>
+    <input type="password" matInput formControlName="password">
+    <mat-icon matSuffix class="fa fa-lock"></mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="p-col-12" color="accent">
+    <mat-label>Confirm Password</mat-label>
+    <input type="password" matInput formControlName="password_confirmation">
+    <mat-icon matSuffix class="fa fa-check-double"></mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="p-col-12" color="accent">
+    <mat-label>Select a Site</mat-label>
+    <mat-select formControlName="site">
+      <mat-option *ngFor="let site of sites" [value]="site.id">
+        {{site.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="p-col-12">
+    <div class="p-grid p-nogutter">
+      <div class="p-col-12 hsse-rg_spacer--tb">
+        <mat-slide-toggle formControlName="contractor">Contractor?</mat-slide-toggle>
+      </div>
+      <div class="p-col-12 hsse-rg_spacer--top">
+        <button mat-raised-button class="hsse_element--full" color="accent" (click)="createUser()" [disabled]="!newUserForm.valid">Sign in!</button>
+      </div>
+    </div>
+  </div>
+</form>

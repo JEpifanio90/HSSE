@@ -1,0 +1,59 @@
+@import '../../../../assets/scss/colors';
+
+%grap-placeholder {
+    border-radius: 3px;
+    padding: 15px;
+    margin: -6% 0 3% 0;
+    float: left;
+    color: $chalk;
+    width: 100%;
+}
+
+.header {
+    margin: 0 2%;
+    & > #filterBtn {
+        width: 100%;
+    }
+}
+
+mat-card {
+    margin: 5% 5%;
+
+    & > mat-card-header {
+        &.users-graph {
+            @extend %grap-placeholder;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(76, 175, 80, 0.4);
+            background: linear-gradient(60deg, $light-green, $green);
+        }
+        &.reports-graph {
+            @extend %grap-placeholder;
+            box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(0, 188, 212, .4);
+            background: linear-gradient(60deg, $light-blue, $blue);
+        }
+        &.indicators-graph {
+            @extend %grap-placeholder;
+            box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(244, 67, 54, .4);
+            background: linear-gradient(60deg, $light-red, $red);
+        }
+        &.monthly-reports-graph {
+            @extend %grap-placeholder;
+            box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(251, 140, 0, .4);
+            background: linear-gradient(60deg, $light-yellow, $yellow);
+        }
+        &.environmental-graph {
+            @extend %grap-placeholder;
+            box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(0, 150, 136, .4);
+            background: linear-gradient(60deg, $light-cyan, $cyan);
+        }
+        .mat-card-subtitle {
+            color: $chalk;
+        }
+    }
+}
+
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+

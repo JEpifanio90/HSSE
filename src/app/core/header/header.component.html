@@ -1,0 +1,52 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <div class="p-grid p-nogutter p-align-center" id="header-container">
+      <div class="p-col-fixed" id="logo">
+        <img src="assets/images/logo.png" alt="" height="100%" width="100%">
+      </div>
+      <ng-container *ngIf="!loggedIn; else logedInMenu">
+        <a mat-button>About</a>
+        <a mat-button href="#featuresSection">Features</a>
+        <a mat-button href="#screenshotsSection">Screenshots</a>
+        <span class="hsse_spacer--100"></span>
+        <button mat-raised-button color="accent" (click)="scrollTo('demoSection')">Schedule a Demo</button>
+      </ng-container>
+      <ng-template #logedInMenu>
+        <span class="hsse_spacer--100"></span>
+        <button mat-icon-button color="warn" [matMenuTriggerFor]="langMenu">
+          <mat-icon class="fa fa-globe"></mat-icon>
+        </button>
+        <mat-menu #langMenu="matMenu">
+          <button mat-menu-item>EN</button>
+          <button mat-menu-item>ES</button>
+        </mat-menu>
+        <button mat-icon-button color="warn" (click)="sidebarToggle()">
+          <mat-icon class="fa fa-grip-vertical"></mat-icon>
+        </button>
+        <button mat-icon-button color="warn" [matMenuTriggerFor]="profileMenu">
+          <mat-icon class="fa fa-user"></mat-icon>
+        </button>
+        <mat-menu #profileMenu="matMenu">
+          <button mat-menu-item>
+            <span>
+              <mat-icon class="fa fa-user-edit"></mat-icon>
+              Edit Profile
+            </span>
+          </button>
+          <button mat-menu-item>
+            <span>
+              <mat-icon class="fa fa-moon"></mat-icon>
+              <mat-slide-toggle></mat-slide-toggle>
+            </span>
+          </button>
+          <button mat-menu-item>
+            <span>
+              <mat-icon class="fa fa-sign-out-alt"></mat-icon>
+              Logout
+            </span>
+          </button>
+        </mat-menu>
+      </ng-template>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

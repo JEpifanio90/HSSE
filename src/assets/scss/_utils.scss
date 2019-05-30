@@ -1,0 +1,63 @@
+@import './colors';
+
+.hsse {
+  &_container {
+    &--center {
+      margin: 5% 10%;
+    }
+
+    &--center-pad {
+      padding: 2% 7%;
+    }
+  }
+
+  &_element {
+    &--center {
+      text-align: center;
+    }
+
+    &--full {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &_spacer {
+    &--100 {
+      flex: 1 1 auto;
+    }
+  }
+
+  &_text {
+    &--big {
+      & > h1 {
+        font-size: 4em;
+        font-weight: 400;
+      }
+
+      & > p {
+        font-size: 1.8em;
+        font-weight: 400;
+      }
+    }
+
+    &--center {
+      text-align: center;
+    }
+
+    &--justify {
+      text-align: justify;
+    }
+
+    &--stroke {
+      // color: black;
+      -webkit-text-fill-color: $chalk;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: $purple;
+    }
+
+    &--underline {
+      text-decoration: underline;
+    }
+  }
+}

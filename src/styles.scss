@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500');
+@import '~@angular/material/theming';
+@include mat-core();
+
+@import './assets/scss/colors';
+@import './assets/scss/utils';
+
+$hsse-primary: mat-palette($mat-blue, 600);
+$hsse-accent:  mat-palette($mat-deep-purple, 600);
+$hsse-warn:    mat-palette($mat-red, 600);
+$hsse-theme:   mat-light-theme($hsse-primary, $hsse-accent, $hsse-warn);
+
+@include angular-material-theme($hsse-theme);
+
+
+// Define an alternate dark theme.
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-red, 600);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+.hsse-dark {
+  @include angular-material-theme($dark-theme);
+}
+
+.p-col {
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0.4%;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px $grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $black;
+  border-radius: 10px;
+}

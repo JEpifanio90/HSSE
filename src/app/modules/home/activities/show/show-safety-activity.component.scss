@@ -1,0 +1,13 @@
+mat-card {
+    margin: 2% 2%;
+}
+
+mat-icon:hover {
+    cursor: pointer;
+}
+
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+}

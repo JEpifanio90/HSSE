@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-card-content>
+    <hsse-questions [form]="environmentalForm" [questions]="environmentalQuestions"></hsse-questions>
+    <div align="end">
+      <button mat-button color="accent" (click)="environmentalForm.reset()">Cancel</button>
+      <button mat-button color="primary" (click)="createIndicator()">Create</button>
+    </div>
+  </mat-card-content>
+</mat-card>

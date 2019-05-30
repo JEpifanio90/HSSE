@@ -1,0 +1,37 @@
+<form [formGroup]="form" [fxLayout]="layout" fxLayoutAlign="space-evenly stretch" [fxLayoutGap]="gap">
+  <ng-container *ngFor="let question of questions" [ngSwitch]="question.control_type">
+    <mat-form-field *ngSwitchCase="'textbox'" appearance="outline" fxFlex>
+      <mat-label>{{question.label}}</mat-label>
+      <input [type]="question.input_type" matInput [formControlName]="question.key">
+      <mat-icon matSuffix class="fa fa-{{question.icon}}"></mat-icon>
+    </mat-form-field>
+    <mat-form-field *ngSwitchCase="'dropdown'" appearance="outline" fxFlex>
+      <mat-select placeholder="{{question.label}}" [formControlName]="question.key">
+        <mat-option *ngFor="let option of question.options" [value]="option.value">
+          {{option.name}}
+        </mat-option>
+      </mat-select>
+      <mat-icon matSuffix class="fa fa-{{question.icon}}"></mat-icon>
+      <mat-error *ngIf="isValid(question)">{{question.label}}
+        <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field *ngSwitchCase="'datepicker'" appearance="outline" fxFlex>
+      <mat-label>{{question.label}}</mat-label>
+      <input matInput [matDatepicker]="datePicker" [formControlName]="question.key">
+      <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+      <mat-datepicker disabled="false" #datePicker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field *ngSwitchCase="'multipledropdown'" appearance="outline" multiple fxFlex>
+      <mat-select placeholder="{{question.label}}" [formControlName]="question.key">
+        <mat-option *ngFor="let option of question.options" [value]="option.value">
+          {{option.name}}
+        </mat-option>
+      </mat-select>
+      <mat-icon matSuffix class="fa fa-{{question.icon}}"></mat-icon>
+      <mat-error *ngIf="isValid(question)">{{question.label}}
+        <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </ng-container>
+</form>

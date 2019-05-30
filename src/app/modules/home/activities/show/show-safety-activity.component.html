@@ -1,0 +1,14 @@
+<mat-card fxFlex>
+  <mat-card-header>
+    <mat-card-title>Existing Safety Activities</mat-card-title>
+  </mat-card-header>
+  <mat-list role="list" *ngFor="let activity of activities">
+    <mat-list-item role="listitem">
+      <h3 matLine> {{activity.activity_name}} </h3>
+      <p matLine>
+        <span>Comments: {{activity.comments}}</span>
+      </p>
+      <mat-icon class="fa fa-trash-alt"matListIcon (click)="deleteSafetyAct(activity)"></mat-icon>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

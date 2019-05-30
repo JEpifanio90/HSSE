@@ -1,0 +1,22 @@
+<div fxLayout="column">
+  <div class="header" fxFlex>
+    <h3>Date Range:</h3>
+    <hsse-questions [form]="dateRangeForm" [questions]="dashboardQuestions" layout='row' gap="3%"></hsse-questions>
+    <button id="filterBtn" mat-stroked-button color="accent" (click)="filterGraphs()">Filter Graphs</button>
+  </div>
+  <div fxLayout="row wrap" fxLayout.xs="column" fxFlex>
+    <div *ngFor="let graph of dashboardGraphs" fxFlex="50%">
+      <mat-card>
+        <mat-card-header class="{{graph.class}}">
+          <mat-card-title>{{ graph.title }}</mat-card-title>
+          <mat-icon class="fa fa-{{ graph.icon }}"></mat-icon>
+          <mat-card-subtitle>{{ graph.subTitle }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p-chart type="pie" [data]="graph.info"></p-chart>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+

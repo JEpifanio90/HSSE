@@ -1,0 +1,97 @@
+<div class="p-grid p-nogutter p-align-center">
+  <div class="p-col-12 p-sm-12 p-md-12 p-lg-12">
+    <div id="aboutSection">
+      <div class="p-grid p-nogutter p-align-center">
+        <div class="p-col-12 p-sm-12 p-md-6 p-lg-6">
+          <div class="hsse_element--center">
+            <img src="assets/images/demo.png" alt="" height="60%" width="60%">
+          </div>
+        </div>
+        <div class="p-col-12 p-sm-12 p-md-6 p-lg-6">
+          <div class="hsse-lndg_card--center">
+            <mat-card>
+              <mat-card-title>Welcome Back!</mat-card-title>
+              <mat-card-content>
+                <mat-tab-group>
+                  <mat-tab label="Sign In">
+                    <hsse-login></hsse-login>
+                  </mat-tab>
+                  <mat-tab label="Register">
+                    <hsse-registration></hsse-registration>
+                  </mat-tab>
+                </mat-tab-group>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-col-12 p-sm-12 p-md-12 p-lg-12">
+    <div id="featuresSection">
+      <div class="p-grid p-nogutter p-align-center">
+        <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 hsse_element--center hsse_text--underline">
+          <h2>Features</h2>
+        </div>
+        <div class="p-col-12 p-sm-12 p-md-6 p-lg-6" *ngFor="let feature of features">
+          <div class="p-grid p-nogutter p-justify-center p-align-center">
+            <div class="p-col-12 p-sm-4 p-md-6 p-lg-6">
+              <img [src]="feature.img" alt="" width="100%" height="100%">
+            </div>
+            <div class="p-col-12 p-sm-8 p-md-6 p-lg-6">
+              <h3>{{ feature.title }}</h3>
+              <p class="hsse_text--justify">{{ feature.label }}</p>
+            </div>
+          </div>
+        </div>
+        <div id="screenshotsSection" class="p-col-12 p-sm-12 p-md-12 p-lg-12 hsse_element--center hsse_text--underline">
+          <h2>Screenshots</h2>
+        </div>
+        <div class="p-col-12 p-sm-12 p-md-12 p-lg-12">
+          <div class="p-grid p-justify-center">
+            <div class="p-col-4 p-sm-4 p-md-3 p-lg-3" *ngFor="let screenshot of screenshots">
+              <img [src]="screenshot.img" alt="" width="100%" height="100%">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-col-12 p-sm-12 p-md-12 p-lg-12">
+    <div id="demoSection">
+      <div class="p-grid p-nogutter p-justify-center">
+        <div class="p-col-12 p-sm-12 p-md-4 p-lg-4">
+          <mat-card>
+            <mat-card-content>
+              <div class="p-grid p-nogutter">
+                <div class="p-col-12 hsse_element--center">
+                  <img src="assets/images/web.gif" alt="" height="60%" width="60%">
+                  <h2>Schedule a demo with us</h2>
+                  <p>We can help you solve any company issues.</p>
+                </div>
+                <div class="p-col-12">
+                  <form [formGroup]="demoForm" class="p-grid p-nogutter">
+                    <mat-form-field appearance="outline" class="p-col-12" color="accent">
+                      <mat-label>Full Name</mat-label>
+                      <input type="text" matInput formControlName="name">
+                      <mat-icon matSuffix class="fa fa-user"></mat-icon>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="p-col-12" color="accent">
+                      <mat-label>Email</mat-label>
+                      <input type="email" matInput formControlName="email">
+                      <mat-icon matSuffix class="fa fa-envelope"></mat-icon>
+                    </mat-form-field>
+                  </form>
+                </div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions class="hsse_element--center">
+              <button mat-raised-button class="hsse_element--full" color="primary" [disabled]="!demoForm.valid">Request
+                a demo</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

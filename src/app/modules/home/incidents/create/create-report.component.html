@@ -1,0 +1,53 @@
+<mat-horizontal-stepper [linear]="false" #stepper>
+  <mat-step [stepControl]="personalInfoForm">
+    <ng-template matStepLabel>Personal Information</ng-template>
+    <hsse-questions [form]="personalInfoForm" [questions]="personalInfoQuestions"></hsse-questions>
+    <div align="end">
+      <button mat-button matStepperNext color="primary">Next</button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="incidentDescriptionForm">
+    <ng-template matStepLabel>Incident Description</ng-template>
+    <hsse-questions [form]="incidentDescriptionForm" [questions]="incidentDescriptionQuestions"></hsse-questions>
+    <div align="end">
+      <button mat-button matStepperPrevious color="accent">Back</button>
+      <button mat-button matStepperNext color="primary">Next</button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="eventDescriptionForm">
+    <ng-template matStepLabel>Event Description</ng-template>
+    <hsse-questions [form]="eventDescriptionForm" [questions]="eventDescriptionQuestions"></hsse-questions>
+    <div align="end">
+      <button mat-button matStepperPrevious color="accent">Back</button>
+      <button mat-button matStepperNext color="primary">Next</button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="incidentAnalysisForm">
+    <ng-template matStepLabel>Incident Analysis</ng-template>
+    <hsse-questions [form]="incidentAnalysisForm" [questions]="incidentAnalysisQuestions"></hsse-questions>
+    <div align="end">
+      <button mat-button matStepperPrevious color="accent">Back</button>
+      <button mat-button matStepperNext color="primary">Next</button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="ApprovalsForm">
+    <ng-template matStepLabel>Report Approval</ng-template>
+    <hsse-questions [form]="ApprovalsForm" [questions]="ApprovalsQuestions"></hsse-questions>
+    <div align="end">
+      <button mat-button matStepperPrevious color="accent">Back</button>
+      <button mat-button matStepperNext color="primary">Next</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Summary</ng-template>
+    <h3>Please review the report's info (by clicking on each tab) and when you're done hit save.</h3>
+    <mat-list role="list" [hidden]="errorList.length<=0">
+      <h2 mat-subheader>Errors</h2>
+      <mat-list-item role="listitem" *ngFor="let error of errorList">{{ error }}</mat-list-item>
+    </mat-list>
+    <div align="end">
+      <button mat-button color="accent" (click)="stepper.reset()">Reset</button>
+      <button mat-button color="primary" (click)="saveReport()">Save</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
